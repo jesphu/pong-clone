@@ -26,6 +26,21 @@ bool Game::is_exiting() {
 }
 
 void Game::game_loop() {
+    sf::Event currentEvent;
+    while(s_main_window.pollEvent(currentEvent)) {
+        switch(s_game_state) {
+            case Game::Playing: 
+                {
+                    s_main_window.clear(sf::Color(255, 0, 0));
+                    s_main_window.display();
+                }
+
+                if(currentEvent.type == sf::Event::Closed) {
+                    s_game_state = Game::Exiting;
+                }
+                break;
+        }
+    }
 
 }
 
