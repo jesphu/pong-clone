@@ -11,12 +11,12 @@ class Game {
     private:
         static bool is_exiting();
         static void game_loop();
-
-        enum game_state {
+        //
+        enum GameState {
             Uninitialized, ShowingSplash, Paused, ShowingMenu, Playing, Exiting
         }; // Represents the various states the game can be in. An enum is a user-defined type consisting of a set of named constants called enumerators. 
-
-        static game_state s_game_state;
+        //
+        static GameState s_game_state;
         static sf::RenderWindow s_main_window;
 };
 
